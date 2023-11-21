@@ -7,8 +7,9 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#define MEM_SIZE 4096
 
-int32_t mem[4096] = { 0 };
+int32_t mem[MEM_SIZE] = { 0 };
 uint32_t pc = 0, ri = 0;
 int32_t hi = 0, lo = 0, regs[32] = { 0 };
 uint8_t opcode, rs, rt, rd, shamnt, func;
@@ -17,8 +18,8 @@ uint32_t k26;
 
 
 void load_mem(){
-#define TEXT_SIZE 0x48
-#define DATA_SIZE 0xffc
+#define TEXT_SIZE 0x2000
+#define DATA_SIZE 0x2000//MEM_SIZE * 4 - TEXT_SIZE
 	std::ifstream text, data;
 	char text_buf[TEXT_SIZE] = { 0 };
 	char data_buf[DATA_SIZE] = { 0 };

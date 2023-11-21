@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -Wextra -pedantic -Wno-unused-parameter -Werror=init-self
+CFLAGS = -Wall -Wextra -pedantic -Wno-unused-parameter -Werror=init-self -ggdb
 
 SRC_DIR=src
 OBJ_DIR=obj

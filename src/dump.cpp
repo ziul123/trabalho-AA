@@ -43,6 +43,7 @@ void dump_mem(int start, int end, char format){
 
 	std::cout.flags(saveFlags);
 	std::cout.fill(saveFill);
+	std::cout << std::endl;
 }
 
 void dump_reg(char format){
@@ -88,4 +89,5 @@ void dump_reg(char format){
 
 	std::cout.flags(saveFlags);
 	std::cout.fill(saveFill);
+	std::cout << std::endl;
 }
