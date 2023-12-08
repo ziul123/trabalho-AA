@@ -1,18 +1,19 @@
-#include "syscall.h"
-#include "global.h"
+#include "mips.h"
 #include <stdio.h>
 #include <iostream>
 
-void syscall_write_int(){
+void mips::syscall_write_int(){
 	printf("%d", regs[4]);
 }
 
-void syscall_write_string(){
-	char *bytePtr = (char *) mem;
-	char *str = bytePtr + regs[4];
-	fputs(str, stdout);
+void mips::syscall_write_string(){
+	int32_t tmp, i = 0;
+	while ((tmp = pmem->lbu(regs[4], i)) != 0){
+		printf("%c", tmp);
+		i++;
+	}
 }
 
-void syscall_exit(){
+void mips::syscall_exit(){
 	throw 0;
 }

@@ -1,5 +1,6 @@
 CC = g++
 CFLAGS = -Wall -Wextra -pedantic -Wno-unused-parameter -Werror=init-self -ggdb
+LIBS = -lsystemc
 
 SRC_DIR=src
 OBJ_DIR=obj
